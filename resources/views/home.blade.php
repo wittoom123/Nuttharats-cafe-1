@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     <p><strong>Name:</strong> {{Auth::user()->username}}</p>
-                    <a href="{{route('index')}}" class="btn btn-primary">product Management</a>           
+                    <a href="{{route('admin')}}" class="btn btn-primary">product Management</a>           
                     <a href="" class="btn btn-success">Home</a>
                     <li class="nav-item">
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">

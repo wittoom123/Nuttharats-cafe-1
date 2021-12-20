@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'password',
+        'username','name', 'password','isAdmin'
     ];
 
     /**
@@ -42,4 +42,6 @@ class User extends Authenticatable
     {
         return $this->type === self::ADMIN_TYPE;
     }
+
+    
 }

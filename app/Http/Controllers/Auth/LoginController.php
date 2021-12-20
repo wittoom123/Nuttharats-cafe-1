@@ -33,20 +33,11 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function username()
-    {
-        return 'username';
-    }
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
-    protected function redirectTo()
-    {
-        if (auth()->user()->isAdmin()) {
-            return '/admin/dashboard';
-        } else {
-            return '/home';
-        }
+    public function username(){
+        return 'username';
     }
 }

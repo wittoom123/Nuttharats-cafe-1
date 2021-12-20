@@ -4,7 +4,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
         <li class="active">
-            <a class="" href="index.php">
+            <a class="" href="{{route('admin')}}">
             <img src="https://img.icons8.com/ios-glyphs/30/000000/home.png"/>
                           <span>Dashboard</span>
                       </a>
@@ -38,13 +38,13 @@
           </li>
 
           <li>
-            <a class="" href="product">
+            <a class="" href="{{route('product')}}">
             <img src="https://img.icons8.com/ios-glyphs/30/000000/coffee.png"/>
                           <span>หน้าสินค้า</span>
                       </a>
           </li>
           <li>
-            <a class="" href="coffee_history">
+            <a class="" href="{{route('coffee_history')}}">
             <img src="https://img.icons8.com/ios-glyphs/30/000000/coffee-break.png"/>
                           <span>ประวัติของกาแฟ</span>
 
@@ -53,53 +53,39 @@
           </li>
 
           <li>
-            <a class="" href="product_introduction">
+            <a class="" href="{{route('product_introduction')}}">
             <img src="https://img.icons8.com/material-outlined/35/000000/good-quality--v1.png"/>
                           <span>สินค้าเเนะนำ</span>
                       </a>
           </li>
           <li>
-            <a class="" href="address">
+            <a class="" href="{{route('address')}}">
             <img src="https://img.icons8.com/pastel-glyph/30/000000/treasure-map.png"/>
                           <span>ติดต่อ</span>
                       </a>
           </li>
           <li>
           <li>
-            <a class="" href="">
+            <a class="" href="{{route('user')}}">
             <img src="https://img.icons8.com/ios-glyphs/30/000000/user-male.png"/>
                           <span>หน้าผู้ใช้</span>
 
                       </a>
 
           </li>
+         
 
 
-
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
-                          <span>Tables</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
+          
+          <li>
+            <a class="p-2 text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    Logout
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
                       </a>
-            <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
-            </ul>
-          </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="profile.html">Profile</a></li>
-              <li><a class="" href="login.html"><span>Login Page</span></a></li>
-              <li><a class="" href="contact.html"><span>Contact Page</span></a></li>
-              <li><a class="" href="blank.html">Blank Page</a></li>
-              <li><a class="" href="404.html">404 Error</a></li>
-            </ul>
           </li>
 
         </ul>
@@ -107,3 +93,4 @@
       </div>
     </aside>
     <!--sidebar end-->
+    

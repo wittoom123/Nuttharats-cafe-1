@@ -13,7 +13,7 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="{{route('admin')}}">Home</a></li>
               <li><i class="fa fa-laptop"></i>Dashboard</li>
             </ol>
           </div>
@@ -21,7 +21,7 @@
 
         <div class="table-responsive">
     <h2>Create coffee_history</h2>
-    <form action="{{route('create')}}" method="post"  enctype="multipart/form-data">
+    <form action="{{route('create.h')}}" method="post"  enctype="multipart/form-data">
     @csrf
         <div class="form-group">
             <label for="name">ชื่อ</label>
@@ -71,7 +71,7 @@
                 <td>{{$row->updated_at}}</td>
                 <td>
                     <a href="{{url('/admin/coffee_history/edit/'.$row->id)}}" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{url('/admin/coffee_history/delete/'.$row->id)}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach

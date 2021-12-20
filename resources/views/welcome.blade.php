@@ -20,13 +20,13 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#map">แผนที่</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contactt">ติดต่อ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/login">ลงชื่อเข้าใช้</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('login')}}">ลงชื่อเข้าใช้</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead" style="background-image: url('{{ asset('img/qwqw.png')}}');"
+    <header class="masthead" style="background-image: url('{{ asset('img/qwqw.png')}}')">
         <div class="container">
             <div class="masthead-subheading">ยินดีต้อนรับสู่เว็บไซต์ ณัฐรัฐน์ คาเฟ่</div>
             <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
@@ -93,19 +93,23 @@
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
+                    
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{{asset('/img/portfolio/e.jpg')}}" alt="..." />
+                            @foreach ($product_introduction as $row)
+                            <img class="img-fluid" src="{{asset('/admin/imgs/'.$row->image)}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">ลาเต้</div>
+                            <div class="portfolio-caption-heading">{{$row->name}}</div>
+                            <p class="text-muted">{{$row->detail}} </p>
                             <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 2-->
                     <div class="portfolio-item">
@@ -194,22 +198,25 @@
                 <h2 class="section-heading text-uppercase">ประวัติของกาเเฟ</h2>
                 <h3 class="section-subheading text-muted"></h3>
             </div>
+            @foreach ($coffee_history as $row)
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/img/about/8.jpg')}}"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/admin/imgs/'.$row->image)}}"
                             alt="..." /></div>
+                           
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4></h4>
-                            <h4 class="subheading">ประวัติความเป็นมาของกาแฟในโลก</h4>
+                            <h4 class="subheading">{{$row->name}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">กาแฟโดยแหล่งกำเนิดแล้วเป็นพืชพื้นเมืองของอาบีซีเนีย (Abyssinia)
-                                และอาราเบีย (Arabia) ถูกค้นพบในศตวรรษที่ 6 ราวปี ค.ศ. 575 ในประเทศอาระเบีย (Arabia)
-                                และในขณะเดียวกันบางท่านก็กล่าวว่ากาแฟเป็นพืชพื้นเมืองที่พบในเมืองคัพฟา (Kaffa) </p>
+                            <p class="text-muted">{{$row->detail}} </p>
                         </div>
                     </div>
                 </li>
+                @endforeach
+
+
                 <li class="timeline-inverted">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/img/about/7.jpg')}}"
                             alt="..." /></div>
@@ -226,7 +233,9 @@
                         </div>
                     </div>
                 </li>
-                <li>
+
+                
+                <!-- <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/img/about/6.jpg')}}"
                             alt="..." /></div>
                     <div class="timeline-panel">
@@ -244,8 +253,10 @@
                             </p>
                         </div>
                     </div>
-                </li>
-                <li class="timeline-inverted">
+                </li> -->
+
+
+                <!-- <li class="timeline-inverted">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/img/about/5.jpg')}}"
                             alt="..." /></div>
                     <div class="timeline-panel">
@@ -261,7 +272,7 @@
                                 เมื่อมาถึงประเทศไทยคนไทยเรียกว่า โกปี๊ ข้าวแฝ่ และกาแฟในที่สุด</p>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
@@ -421,13 +432,14 @@
         </div>
     </section>
     <!-- map-->
+    @foreach ($address as $row)
     <section class="page-section" id="map">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">แผนที่</h2>
                 <h3 class="section-subheading text-muted"></h3>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.2965141817767!2d100.4726623148306!3d13.760983990341531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x21f39713d77b3394!2zT1dMIENIQS3guJXguKXguLLguJTguKjguLLguKXguLLguJnguYnguLPguYDguKLguYfguJk!5e0!3m2!1sth!2sth!4v1629349642138!5m2!1sth!2sth"
+                    src="{{asset('/admin/imgs/'.$row->image)}}"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <!-- contactt-->
@@ -438,14 +450,13 @@
                         <h3 class="section-subheading text-muted"></h3>
                     </div>
                     <h4></h4>
-                    <h4 class="subheading">เบอร์ 000-000-0000</h4>
-                    <h4></h4>
-                    <h4 class="subheading">FB. </h4>
+                    <h4 class="subheading">{{$row->name}}</h4>
                 </div>
                 <div class="timeline-body">
                     <p class="text-muted"></p>
                 </div>
         </div>
+        @endforeach
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">

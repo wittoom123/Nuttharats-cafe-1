@@ -13,7 +13,7 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+              <li><i class="fa fa-home"></i><a href="{{route('admin')}}">Home</a></li>
               <li><i class="fa fa-laptop"></i>Dashboard</li>
             </ol>
           </div>
@@ -75,7 +75,7 @@
                 <td>{{$row->updated_at}}</td>
                 <td>
                     <a href="{{url('/admin/product/edit/'.$row->id)}}" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <a href="{{url('/admin/product/delete/'.$row->id)}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
