@@ -85,6 +85,6 @@ class coffee_historyController extends Controller
             File::delete(public_path().'/admin/imgs/'.$delete->image);
         }
         $delete->delete();
-        return redirect()->route('index');
+        return redirect()->route('coffee_history');
     }
     }
