@@ -41,7 +41,8 @@
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$row->name}}</div>
-                            
+                            <div class="portfolio-caption-heading">{{$row->price}}</div>
+                           
                             <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>

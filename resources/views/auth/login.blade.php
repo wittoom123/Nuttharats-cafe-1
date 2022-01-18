@@ -24,9 +24,10 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('back_end/css/main.css')}}">
 <!--===============================================================================================-->
 </head>
-<body>
+<body 
+>
 	
-	<div class="limiter">
+	<div class="limiter" >
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
 				<form class="login100-form validate-form" action="{{route('login')}}" method="POST">

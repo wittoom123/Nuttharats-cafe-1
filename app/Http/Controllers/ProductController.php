@@ -17,6 +17,10 @@ class ProductController extends Controller
         $product = product::all();
         return view('admin.product.index',compact('product'));
     }
+    public function front(){
+        $product = product::all();
+        return view('product',compact('product'));
+    }
     public function create(Request $request)
     {
         $ValidateData = $request->validate([
