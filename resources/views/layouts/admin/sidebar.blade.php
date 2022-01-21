@@ -78,12 +78,14 @@
 
           
           <li>
-            <a class="p-2 text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <a class="fa fa-home"href="/" >Home</a>
+            <a  class="fa fa-sign-out" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                     Logout
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                         @csrf
                     </form>
+                    
                       </a>
 
           </li>

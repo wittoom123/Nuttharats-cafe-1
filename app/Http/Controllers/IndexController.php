@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\coffee_history;
 use App\product_introduction;
-use App\product;
+use App\Product;
 use App\address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -20,8 +20,9 @@ class IndexController extends Controller
         $coffee_history = coffee_history::all();
         $address = address::all();
         $product_introduction = product_introduction::all();
-        $product = product::all();
+        $product = Product::all();
         return view('welcome',compact('coffee_history','product','product_introduction','address'));
         
     }
+    
 }

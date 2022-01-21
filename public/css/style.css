@@ -11856,7 +11856,7 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.95rem;
-    color: #fff;
+    color: rgba(255, 154, 2, 0.986);
     letter-spacing: 0.0625em;
 }
 
@@ -11912,7 +11912,7 @@ header.masthead {
     padding-top: 10.5rem;
     padding-bottom: 6rem;
     text-align: center;
-    color: #fff;
+    color: rgb(253, 202, 36);
     
     background-repeat: no-repeat;
     background-attachment: scroll;

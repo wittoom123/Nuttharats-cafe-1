@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\product;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
@@ -16,6 +16,10 @@ class ProductController extends Controller
     public function index(){
         $product = product::all();
         return view('admin.product.index',compact('product'));
+    }
+    public function front(){
+        $product = product::all();
+        return view('product',compact('product'));
     }
     public function create(Request $request)
     {

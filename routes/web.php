@@ -21,11 +21,8 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('welcome');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('product', function () {
-    return view('product');
-});
-
-
+Route::get('/product', 'ProductController@front')->name('product');
+Route::get('/user', 'UserController@front')->name('UserControllersss');
 //Route for normal user
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
