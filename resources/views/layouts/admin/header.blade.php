@@ -5,20 +5,10 @@
       </div>
 
       <!--logo start-->
-      <a href="index.php" class="logo">ณัฐรัตน์ คาเฟ่</span></a>
+      <a href="/" class="logo">ณัฐรัตน์ คาเฟ่</span></a>
       <!--logo end-->
 
-      <div class="nav search-row" id="top_menu">
-        <!--  search form start -->
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
-        <!--  search form end -->
-      </div>
+
 
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
@@ -231,17 +221,25 @@
           <!-- user login dropdown start-->
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="{{asset('admin/img/avatar1_small.jpg')}}">
+                            <span class="fa fa-user">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">{{Auth::user()->username}}</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
               <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> My Profile</a>
-              </li>
+              <li>
+            <a href="/" >Home</a>
+            <a class="p-2 text-dark" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    Logout
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+
+                      </a>
+
+          </li>
               <!-- <li>
                 <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
               </li>

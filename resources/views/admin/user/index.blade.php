@@ -5,7 +5,6 @@
 
 
 @include('layouts/admin/sidebar')
-
 <section id="main-content">
     <section class="wrapper">
         <!--overview start-->
@@ -14,11 +13,11 @@
                 <h3 class="page-header"><i class="fa fa-laptop"></i> user</h3>
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="{{route('admin')}}">Home</a></li>
-                    <li><i class="fa fa-laptop"></i>Dashboard</li>
+                    <li><i class="fa fa-laptop"></i>User</li>
                 </ol>
             </div>
         </div>
-       
+
 
         <div class="container-fluid">
             <div class="row mt-4">

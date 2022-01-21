@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#services">หน้าเเรก</a></li>
-                    
+
                     <li class="nav-item"><a class="nav-link" href="#portfolio">สินค้าเเนะนำ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">ประวัติของกาเเฟ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
@@ -91,28 +91,28 @@
                 <h3 class="section-subheading text-muted"></h3>
             </div> <div class="row">
             @foreach ($product_introduction as $row)
-           
+
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
-                    
+
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            
+
                             <img class="img-fluid" src="{{asset('/admin/imgs/'.$row->image)}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">{{$row->name}}</div>
-                            
+
                             <div class="portfolio-caption-subheading text-muted"></div>
                         </div>
                     </div>
                 </div>
                 @endforeach
-                
-                
+
+
             </div>
         </div>
     </section>
@@ -131,7 +131,7 @@
                 <li>
                     <div><img class="rounded-circle img-fluid timeline-image"   src="{{asset('/admin/imgs/'.$row->image)}}"
                             alt="..." /></div>
-                           
+
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4></h4>
@@ -145,9 +145,9 @@
                 @endforeach
 
 
-               
 
-                
+
+
                 <!-- <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/img/about/6.jpg')}}"
                             alt="..." /></div>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{asset('/img/team/14.png')}}" alt="..." />
+                    <img class="mx-auto rounded-circle" src="{{asset('/img/team/21.jpg')}}" alt="..." />
                         <h4>นาย สรวิชญ์ ต่ายแต้มทอง </h4>
                         <p class="text-muted">tester</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -230,7 +230,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{asset('/img/team/15.png')}}" alt="..." />
+                    <img class="mx-auto rounded-circle" src="{{asset('/img/team/20.jpg')}}" alt="..." />
                         <h4>นาย ธนกฤต เขมาภิรักษ์</h4>
                         <p class="text-muted">Back-End Developer</p>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -239,13 +239,13 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <!-- Clients-->
-    
+
     <!-- Contact-->
-    
+
     <!-- map-->
     @foreach ($address as $row)
     <section class="page-section" id="map">
@@ -257,7 +257,7 @@
                     src="{{asset('/admin/imgs/'.$row->image)}}"
                     width="80%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-           
+
                     <h4></h4>
                     <h4 class="subheading">{{$row->name}}</h4>
                 </div>
@@ -285,49 +285,8 @@
         </footer>
         <!-- Portfolio Modals-->
         <!-- Portfolio item 1 modal popup-->
-        @foreach ($product_introduction as $row)
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="{{asset('/img/close-icon.svg')}}"
-                            alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    
-                                    <h2 class="text-uppercase">{{$row->name}}</h2>
-                                    <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/admin/imgs/'.$row->image)}}" alt="..." />
-                                    <p>{{$row->detail}}</p>
-                                    <ul class="list-inline">
-                                   
 
-                                        <li>
-                                            <strong></strong>
 
-                                        </li>
-                                        <li>
-                                            <strong></strong>
-
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
-                                        type="button">
-                                        <i class="fas fa-times me-1"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-        
-      
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

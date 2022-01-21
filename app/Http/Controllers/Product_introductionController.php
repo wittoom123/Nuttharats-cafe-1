@@ -13,6 +13,7 @@ use File;
 
 class Product_introductionController extends Controller
 {
+
     public function index(){
         $product_introduction = product_introduction::all();
         return view('admin.product_introduction.index',compact('product_introduction'));
@@ -30,7 +31,7 @@ class Product_introductionController extends Controller
         "price.required"=>"กรอกข้อมูลตัวอย่าง",
         ]);
         $product_introduction = new Product_introduction;
- 
+
         if($request->hasFile('image')){
             $filename = Str::random(10) . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path().'/admin/imgs/' ,$filename);
@@ -59,7 +60,7 @@ class Product_introductionController extends Controller
         "price.required"=>"กรอกข้อมูลตัวอย่าง",
         ]);
         $product_introduction = new Product_introduction;
-     
+
         if($request->hasFile('image')){
             $product_introduction = Product_introduction::find($id);
             if($product_introduction->imgs !='NOPIC.png '){
@@ -87,4 +88,6 @@ class Product_introductionController extends Controller
         $delete->delete();
         return redirect()->route('product_introduction');
     }
+
+
     }
